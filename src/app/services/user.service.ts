@@ -26,8 +26,8 @@ export class UserService {
   }
   addUser(payload: IUser) {
     return this.http.post(`${this.baseUrl}/user`, payload).subscribe({
-      next: () => {
-        this.users.push(payload);
+      next: (response: any) => {
+        this.users.push(response);
       },
       error: (error) => {
         this.errorService.set(error.message);
