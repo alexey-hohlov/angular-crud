@@ -1,0 +1,44 @@
+.button {
+  border-radius: 5px;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  user-select: none;
+  transition: filter 100ms linear;
+  padding: 8px;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    opacity: 0.85;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+}
+
+.green {
+  background: #3cb371;
+}
+
+.red {
+  background: #dc143c;
+}
+
+.pink {
+  background: #eeaeca;
+}
+
+.blue {
+  background: #9dd3f7;
+}
+
+.white {
+  background: white;
+  color: black;
+}

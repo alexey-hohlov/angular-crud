@@ -1,0 +1,72 @@
+<form class="user-form" [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+  <label class="input-wrapper"
+    >First Name
+    <input
+      class="edit-form__input"
+      type="text"
+      formControlName="firstName"
+      [ngClass]="{
+        error: addUserForm.controls.firstName.errors?.required && submitted
+      }"
+    />
+    <span *ngIf="addUserForm.controls.firstName.errors?.required && submitted"
+      >*Name is required</span
+    >
+  </label>
+  <label class="input-wrapper"
+    >Last Name
+    <input
+      class="edit-form__input"
+      type="text"
+      formControlName="lastName"
+      [ngClass]="{
+        error: addUserForm.controls.lastName.errors?.required && submitted
+      }"
+    />
+    <span *ngIf="addUserForm.controls.lastName.errors?.required && submitted"
+      >*Last name is required</span
+    >
+  </label>
+  <label class="input-wrapper"
+    >Email
+    <input
+      class="edit-form__input"
+      type="text"
+      formControlName="email"
+      [ngClass]="{
+        error:
+          (addUserForm.controls.email.errors?.required ||
+            addUserForm.controls.email.errors?.email) &&
+          submitted
+      }"
+    />
+    <span *ngIf="addUserForm.controls.email.errors?.required && submitted"
+      >*Email is required</span
+    >
+    <span *ngIf="addUserForm.controls.email.errors?.email && submitted"
+      >*Incorrect email format</span
+    >
+  </label>
+  <label class="input-wrapper"
+    >Age
+    <input
+      class="edit-form__input"
+      type="number"
+      formControlName="age"
+      [ngClass]="{
+        error: addUserForm.controls.age.errors?.required && submitted
+      }"
+    />
+    <span *ngIf="addUserForm.controls.age.errors?.required && submitted"
+      >*Age is required</span
+    >
+  </label>
+  <label class="input-wrapper"
+    >Gender
+    <select class="edit-form__input" formControlName="gender">
+      <option selected value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+  </label>
+  <app-button title="Submit" color="green" type="submit"></app-button>
+</form>

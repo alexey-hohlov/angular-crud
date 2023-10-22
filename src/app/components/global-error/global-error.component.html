@@ -1,0 +1,8 @@
+<div class="error-banner" *ngIf="errorService.message">
+  <span>{{ errorService.message }}</span>
+  <app-button
+    title="Got it!"
+    color="white"
+    (onClick)="errorService.clear()"
+  ></app-button>
+</div>
