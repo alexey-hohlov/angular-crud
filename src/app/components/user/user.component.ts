@@ -22,10 +22,16 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {
     this.editUserForm = this.fb.group({
-      firstName: [this.user.firstName, Validators.required],
-      lastName: [this.user.lastName, Validators.required],
+      firstName: [
+        this.user.firstName,
+        [Validators.required, Validators.pattern(/^[^\s]+(\s+[^\s]+)*$/)],
+      ],
+      lastName: [
+        this.user.lastName,
+        [Validators.required, Validators.pattern(/^[^\s]+(\s+[^\s]+)*$/)],
+      ],
       email: [this.user.email, [Validators.required, Validators.email]],
-      age: [this.user.age, Validators.required],
+      age: [this.user.age, [Validators.required, Validators.min(0)]],
       gender: ['male'],
     });
   }

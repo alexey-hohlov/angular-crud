@@ -19,10 +19,16 @@ export class AddUserComponent {
   submitted: boolean = false;
 
   addUserForm: FormGroup = this.fb.group({
-    firstName: ['', Validators.required],
-    lastName: ['', Validators.required],
+    firstName: [
+      '',
+      [Validators.required, Validators.pattern(/^[^\s]+(\s+[^\s]+)*$/)],
+    ],
+    lastName: [
+      '',
+      [Validators.required, Validators.pattern(/^[^\s]+(\s+[^\s]+)*$/)],
+    ],
     email: ['', [Validators.required, Validators.email]],
-    age: ['', Validators.required],
+    age: ['', [Validators.required, Validators.min(0)]],
     gender: ['male'],
   });
 

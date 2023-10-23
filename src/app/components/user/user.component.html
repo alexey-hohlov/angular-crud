@@ -21,7 +21,9 @@
         type="text"
         formControlName="firstName"
         [ngClass]="{
-          error: editUserForm.controls.firstName.errors?.required
+          error:
+            editUserForm.controls.firstName.errors?.required ||
+            editUserForm.controls.firstName.errors?.pattern
         }"
       />
     </td>
@@ -30,7 +32,11 @@
         class="edit-form__input"
         type="text"
         formControlName="lastName"
-        [ngClass]="{ error: editUserForm.controls.lastName.errors?.required }"
+        [ngClass]="{
+          error:
+            editUserForm.controls.lastName.errors?.required ||
+            editUserForm.controls.lastName.errors?.pattern
+        }"
       />
     </td>
     <td>
@@ -41,7 +47,7 @@
         [ngClass]="{
           error:
             editUserForm.controls.email.errors?.required ||
-            editUserForm.controls.email.errors?.required
+            editUserForm.controls.email.errors?.email
         }"
       />
     </td>
@@ -50,7 +56,11 @@
         class="edit-form__input"
         type="number"
         formControlName="age"
-        [ngClass]="{ error: editUserForm.controls.age.errors?.required }"
+        [ngClass]="{
+          error:
+            editUserForm.controls.age.errors?.required ||
+            editUserForm.controls.age.errors?.min
+        }"
       />
     </td>
     <td>

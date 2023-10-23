@@ -6,11 +6,17 @@
       type="text"
       formControlName="firstName"
       [ngClass]="{
-        error: addUserForm.controls.firstName.errors?.required && submitted
+        error:
+          (addUserForm.controls.firstName.errors?.required ||
+            addUserForm.controls.firstName.errors?.pattern) &&
+          submitted
       }"
     />
     <span *ngIf="addUserForm.controls.firstName.errors?.required && submitted"
       >*Name is required</span
+    >
+    <span *ngIf="addUserForm.controls.firstName.errors?.pattern && submitted"
+      >*Field cannot start or end with whitespace</span
     >
   </label>
   <label class="input-wrapper"
@@ -20,11 +26,17 @@
       type="text"
       formControlName="lastName"
       [ngClass]="{
-        error: addUserForm.controls.lastName.errors?.required && submitted
+        error:
+          (addUserForm.controls.lastName.errors?.required ||
+            addUserForm.controls.lastName.errors?.pattern) &&
+          submitted
       }"
     />
     <span *ngIf="addUserForm.controls.lastName.errors?.required && submitted"
       >*Last name is required</span
+    >
+    <span *ngIf="addUserForm.controls.lastName.errors?.pattern && submitted"
+      >*Field cannot start or end with whitespace</span
     >
   </label>
   <label class="input-wrapper"
@@ -54,11 +66,17 @@
       type="number"
       formControlName="age"
       [ngClass]="{
-        error: addUserForm.controls.age.errors?.required && submitted
+        error:
+          (addUserForm.controls.age.errors?.required ||
+            addUserForm.controls.age.errors?.min) &&
+          submitted
       }"
     />
     <span *ngIf="addUserForm.controls.age.errors?.required && submitted"
       >*Age is required</span
+    >
+    <span *ngIf="addUserForm.controls.age.errors?.min && submitted"
+      >*Age cannot be negative</span
     >
   </label>
   <label class="input-wrapper"
