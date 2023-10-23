@@ -14,6 +14,6 @@ export class TableComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // this.userService.getUsers();
+    this.userService.getUsers();
   }
 }
