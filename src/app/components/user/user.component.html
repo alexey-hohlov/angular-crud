@@ -6,11 +6,16 @@
     <td>{{ user.age }}</td>
     <td>{{ user.gender }}</td>
     <td class="table-buttons">
-      <app-button title="Edit" (onClick)="handleEdit()"></app-button>
+      <app-button
+        title="Edit"
+        (onClick)="handleEdit()"
+        [isDisabled]="userService.isLoading"
+      ></app-button>
       <app-button
         title="Delete"
         color="red"
         (onClick)="handleDelete(user._id!, index)"
+        [isDisabled]="userService.isLoading"
       ></app-button>
     </td>
   </ng-container>

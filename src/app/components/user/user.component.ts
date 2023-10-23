@@ -11,7 +11,7 @@ import { IUser } from 'src/app/types/userTypes';
 export class UserComponent implements OnInit {
   constructor(
     private fb: NonNullableFormBuilder,
-    private userService: UserService
+    public userService: UserService
   ) {}
 
   @Input() user: IUser;

@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IUser } from '../types/userTypes';
 import { ErrorService } from './error.service';
-import { catchError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +10,9 @@ export class UserService {
   constructor(private http: HttpClient, private errorService: ErrorService) {}
 
   users: Array<IUser> = [];
+
+  isLoading: boolean = false;
+
   private baseUrl: string =
     'https://crudcrud.com/api/080998ef13a7495bb62c1bed4fd7e6ca';
 
@@ -35,12 +37,16 @@ export class UserService {
     });
   }
   editUser(id: string, payload: IUser, index: number) {
-    return this.http.put(`${this.baseUrl}/user/${id}`, payload).subscribe({
+    this.isLoading = true;
+    this.http.put(`${this.baseUrl}/user/${id}`, payload).subscribe({
       next: () => {
         this.users[index] = { ...payload, _id: id };
       },
       error: (error) => {
         this.errorService.set(error.message);
+      },
+      complete: () => {
+        this.isLoading = false;
       },
     });
   }
