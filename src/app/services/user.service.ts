@@ -12,7 +12,7 @@ export class UserService {
 
   users: Array<IUser> = [];
   private baseUrl: string =
-    'https://crudcrud.com/api/5e0c5acaa4ab4441b26d38b5b4189175';
+    'https://crudcrud.com/api/080998ef13a7495bb62c1bed4fd7e6ca';
 
   getUsers() {
     return this.http.get(`${this.baseUrl}/user`).subscribe({
