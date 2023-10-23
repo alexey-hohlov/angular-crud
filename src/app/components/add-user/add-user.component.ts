@@ -13,7 +13,7 @@ export class AddUserComponent {
   constructor(
     private fb: FormBuilder,
     private userService: UserService,
-    private modalService: ModalService
+    public modalService: ModalService
   ) {}
 
   submitted: boolean = false;

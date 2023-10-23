@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ModalService } from 'src/app/services/modal.service';
 
 @Component({
@@ -8,6 +8,8 @@ import { ModalService } from 'src/app/services/modal.service';
 })
 export class ModalComponent {
   constructor(public modalService: ModalService) {}
+
+  @Input() closeOnClick: boolean =  false;
 
   propagation(e: any) {
     e.stopPropagation();

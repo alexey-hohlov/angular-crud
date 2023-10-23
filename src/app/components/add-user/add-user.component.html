@@ -2,7 +2,7 @@
   <label class="input-wrapper"
     >First Name
     <input
-      class="edit-form__input"
+      class="user-form__input"
       type="text"
       formControlName="firstName"
       [ngClass]="{
@@ -16,7 +16,7 @@
   <label class="input-wrapper"
     >Last Name
     <input
-      class="edit-form__input"
+      class="user-form__input"
       type="text"
       formControlName="lastName"
       [ngClass]="{
@@ -30,7 +30,7 @@
   <label class="input-wrapper"
     >Email
     <input
-      class="edit-form__input"
+      class="user-form__input"
       type="text"
       formControlName="email"
       [ngClass]="{
@@ -50,7 +50,7 @@
   <label class="input-wrapper"
     >Age
     <input
-      class="edit-form__input"
+      class="user-form__input"
       type="number"
       formControlName="age"
       [ngClass]="{
@@ -63,10 +63,17 @@
   </label>
   <label class="input-wrapper"
     >Gender
-    <select class="edit-form__input" formControlName="gender">
+    <select class="user-form__input" formControlName="gender">
       <option selected value="male">Male</option>
       <option value="female">Female</option>
     </select>
   </label>
-  <app-button title="Submit" color="green" type="submit"></app-button>
+  <div class="user-form__buttons">
+    <app-button title="Submit" color="green" type="submit"></app-button>
+    <app-button
+      title="Close"
+      color="red"
+      (onClick)="modalService.close()"
+    ></app-button>
+  </div>
 </form>
