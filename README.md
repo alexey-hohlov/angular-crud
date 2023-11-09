@@ -1,5 +1,6 @@
-# CRUD application in Angular
-Test task "CRUD app"
+# CRUD application in Angular<img width="1016" alt="Снимок экрана 2023-11-10 в 03 52 53" src=">
+
+<img src="https://github.com/alexey-hohlov/angular-crud/assets/79412122/93e11f21-88ea-4ea8-a268-b867aa8f8bf5" width="800">
 
 ## 💻 Technologies
 * TypeScript
