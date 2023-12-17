@@ -14,7 +14,7 @@
 * SCSS
 
 ## 🚀 Features
-* Add, remove, delete and edit users
+* Add, remove and edit users
 * Validated forms
 
 ## 🤖 How to run
